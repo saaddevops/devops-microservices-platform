@@ -1,0 +1,9 @@
+services:
+  api:
+    build: ./app/api
+    ports: ["5000:5000"]
+    environment:
+      REDIS_HOST: redis
+    depends_on: [redis]
+  redis:
+    image: redis:7-alpine
